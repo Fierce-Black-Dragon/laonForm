@@ -57,9 +57,7 @@ form.addEventListener("submit", (event) => {
     localStorage.setItem("count", localCount);
     console.log(localCount);
     const attempts = 3 - localCount;
-    localStorage.removeItem("otp");
-    localStorage.removeItem("count");
-    if (attempts !== 0) {
+    if (attempts > 0) {
       alert(" wrong otp enter You have " + attempts + " attempts left");
     }
   }
