@@ -70,6 +70,6 @@ form.addEventListener("submit", (event) => {
     successful.innerHTML = "Validation Successful!";
     localStorage.removeItem("otp");
     localStorage.removeItem("count");
-    window.location.href = "https://pixel6.co/portfolio/";
+    window.location.href = "https://pixel6.co/";
   }
 });
