@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You</title>
+    <link rel="stylesheet" href="/css/thank.css" />
+  </head>
+  <body>
+    <h3>Thank You</h3>
+    <h5></h5>
+    <div class="container">
+      <p>Dear <span id="name"></span> ,</p>
+      <p>
+        Thank you for your inquiry. A 4 digit verification number has been sent
+        to your email: <b><span id="email"></span></b>, please enter it in the
+        following box and submit for confirmation:
+      </p>
+    </div>
+    <div class="otpVerification">
+      <form id="otpForm">
+        <input
+          type="number"
+          id="otp"
+          min="0000"
+          max="9999"
+          required
+          placeholder=" 4 digit otp"
+        />
+        <button class="btn" type="submit">Validate</button>
+      </form>
+    </div>
+    <p id="successful"></p>
+    <script src="/js/thanku.js"></script>
+  </body>
+</html>

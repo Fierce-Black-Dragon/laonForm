@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Details</title>
+    <link rel="stylesheet" href="/css/index.css">
+  </head>
+  <body>
+    <h3>Loan Application</h3>
+    <form id="loanForm" method="GET" accept="thanku.html">
+      <div class="container">
+        <label for="name">Full Name </label>
+        <input type="text"
+        name="name" 
+        id="name" 
+        title="  It should in format FirstName LastName" 
+        required 
+        placeholder="Enter Full Name"
+        pattern="[a-zA-Z]{4,}[ a-zA-Z ]{4,}"" />
+      </div>
+      <div  class="container">
+        <label for="email"> Email Address</label>
+        <input type="email" name="email" 
+         title="  It should in user@some.com" 
+        required 
+        placeholder="Enter Email"
+        id="email" />
+      </div>
+      <div  class="container">
+        <label for="PAN">Pan Card Number </label>
+        <input
+          type="text"
+          name="PAN"
+          id="PAN"
+          required
+          placeholder="Enter Pan card Number"
+          title="  It should in format ABCDE1234F"
+          pattern="[A-Z0-9-A-Z]{10}"
+        />
+      </div>
+
+      <div  class="container">
+        <label for="loanAmount">Loan amount </label>
+        <input type="number" name="loanAmount" 
+        id="loanAmount"
+      
+         min="1"
+         
+        required 
+        placeholder="Enter loan amount"
+          max="999999999" />
+        <p id="loanAmountWords"></p>
+      </div>
+      <div>
+   
+      <div  class="container" style="margin:2% 0 ;">
+         <p> Captcha</p>
+       <div class="captchaDiv">
+     
+      <canvas id="canvas" height="50" width=80">
+    </canvas>
+         <button id="newGen">new captcha</button>
+      </div>
+        <input type="number" name="captcha" id="captcha"  required/>
+       
+      </div>
+    
+      <button class="btn" type="submit">Submit</button>
+    </form>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
