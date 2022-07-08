@@ -43,11 +43,12 @@ form.addEventListener("submit", (event) => {
   //  checking if user has used his/her 3 attempts(0,1,2)
   if (count === 2 || localCount === 2) {
     //   if yess than revoming items from local storage
-    localStorage.removeItem("otp");
-    localStorage.removeItem("count");
+
     // pop up alert msg
     alert(" You  enter wrong  otp 3 times");
     // redirect
+    localStorage.removeItem("otp");
+    localStorage.removeItem("count");
     window.location.href = "http://pixel6.co/404";
   }
   //  if input enter  is less there 3 or  does match the send otp  popup  alert is shown

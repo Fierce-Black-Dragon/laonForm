@@ -132,6 +132,7 @@ function generateCaptcha() {
 //  on page load || reload   set the localStorage captcha to  empty and generate new
 window.addEventListener("load", () => {
   localStorage.setItem("captcha", "");
+  localStorage.setItem("count", "0");
 
   generateCaptcha();
 });
@@ -161,6 +162,7 @@ form.addEventListener("submit", (event) => {
   if (storedCaptcha === userInput) {
     //  if yes submit
     form.submit();
+    localStorage.removeItem("captcha");
     // redirecting to
     window.location.href = `/thanku.html?name=${UserNAme}&email=${UserEmail}&PAN=${UserPAN}&loanAmount=${UserLoanAmount}`;
   } else {
