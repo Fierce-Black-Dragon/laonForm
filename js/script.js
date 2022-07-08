@@ -132,6 +132,7 @@ function generateCaptcha() {
 //  on page load || reload   set the localStorage captcha to  empty and generate new
 window.addEventListener("load", () => {
   localStorage.setItem("captcha", "");
+  localStorage.removeItem("otp");
   localStorage.setItem("count", "0");
 
   generateCaptcha();

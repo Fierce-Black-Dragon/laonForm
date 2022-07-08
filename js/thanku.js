@@ -39,17 +39,15 @@ form.addEventListener("submit", (event) => {
   const userInputText = document.querySelector("#otp").value;
   let localCount = parseInt(localStorage.getItem("count"));
   const userInput = parseInt(userInputText);
-
-  //  checking if user has used his/her 3 attempts(0,1,2)
-  if (count === 2 || localCount === 2) {
-    //   if yess than revoming items from local storage
+  // if otp matches the send otp
+  if (otpSend === userInput) {
+    //   making the form hidden destroying the keys in local storage  show the verification success text and redirect to pixel6 page
+    otpVerificationDiv.style.display = "none";
+    successful.style.color = "green";
+    successful.innerHTML = "Validation Successful!";
     localStorage.removeItem("otp");
     localStorage.removeItem("count");
-    // pop up alert msg
-    alert(" You  enter wrong  otp 3 times");
-    // redirect
-
-    window.location.href = "http://pixel6.co/404";
+    window.location.href = "https://pixel6.co/portfolio/";
   }
   //  if input enter  is less there 3 or  does match the send otp  popup  alert is shown
   if (userInput !== otpSend) {
@@ -62,14 +60,15 @@ form.addEventListener("submit", (event) => {
       alert(" wrong otp enter You have " + attempts + " attempts left");
     }
   }
-  // if otp matches the send otp
-  if (otpSend === userInput) {
-    //   making the form hidden destroying the keys in local storage  show the verification success text and redirect to pixel6 page
-    otpVerificationDiv.style.display = "none";
-    successful.style.color = "green";
-    successful.innerHTML = "Validation Successful!";
+  //  checking if user has used his/her 3 attempts(0,1,2)
+  if (count === 2 || localCount === 2) {
+    //   if yess than revoming items from local storage
     localStorage.removeItem("otp");
     localStorage.removeItem("count");
-    window.location.href = "https://pixel6.co/portfolio/";
+    // pop up alert msg
+    alert(" You  enter wrong  otp 3 times");
+    // redirect
+
+    window.location.href = "http://pixel6.co/404";
   }
 });
